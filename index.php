@@ -12,6 +12,10 @@
         <button type="submit">Enviar</button>
     </form>
     <input type="text" name="palabra" value="abcd" hidden>
+    <div class="palabraOrdenada">
+        
+    </div>
+
     <div class="letrasDesordenadas" style="display: flex; flex-direction: row;">
         <p style="margin-right: 40px;">A</p>
         <p style="margin-right: 40px;">B</p>

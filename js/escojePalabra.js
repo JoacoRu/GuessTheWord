@@ -5,22 +5,50 @@
         var valorInput = input.value;
         var inputArray = Array.from(valorInput);
         var unArray = new Array;
+        var palabraOrdenada = document.querySelector('.palabraOrdenada');
+        var palabraOrdenadaChildren = palabraOrdenada.children;
+        
         function events(event){
-            var posicion = inputArray.indexOf(this.textContent.toLowerCase());
-            console.log(posicion);
-            if(posicion != -1){
-                unArray.splice(posicion, 0, this.textContent);
-                this.style.background = 'grey';
-                this.removeEventListener('click', events);
-                console.log(unArray);
-            }else{
-                this.style.background = 'red';
+            unArray.push(this.textContent);
+            this.style.background = 'grey';
+            this.removeEventListener('click', events);
+        }
+
+        function addEvent(){        
+            for(var i =0; i < letrasChildren.length; i++){
+            var event =  letrasChildren[i].addEventListener('click', events);
             }
+        }
+
+        function addP(){
+            for(var o=0; o < inputArray.length; o++){
+                var p = document.createElement('p');
+                palabraOrdenada.appendChild(p);
+            }
+        }
+
+        function addClassNameToP(){
+            for(var i = 0; i < palabraOrdenadaChildren.length; i++){
+                palabraOrdenadaChildren[i].classList.add("resultado"+i);
+            }
+        }
+
+        function contentEvent(event){
+            var letra = unArray.pop();
             
+
         }
-        for(var i =0; i < letrasChildren.length; i++){
-           var event =  letrasChildren[i].addEventListener('click', events);
+
+        function addContent(){
+            for(var i = 0; i < letrasChildren.length; i++){
+                var event = letrasChildren[i].addEventListener('change', contentEvent);
+            }
         }
+
+        
+        addEvent();
+        addP();
+        addClassNameToP();
 
         
     }
