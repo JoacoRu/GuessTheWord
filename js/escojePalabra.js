@@ -58,10 +58,16 @@
             if(input.value.length == unArray.length){
                 for(let i = 0 ; i < unArray.length; i++){
                     let resultado = document.querySelector('.resultado'+i);
-                    resultado.textContent;
+                    contador += resultado.textContent;
                 }
                 
-                console.log(contador);
+                var contenido = contador.split('undefined');
+                if(contenido[1].toString().toLowerCase() == valorInput){
+                    alert('Pasaste de nivel');
+                }else{
+                    alert('Resultado incorrecto');
+                    location.reload();
+                }
             }
         }
         addP();
