@@ -29,5 +29,16 @@
     </div>
 
     <script src="js/escojePalabra.js"></script>
+
+    <style>
+        .palabraOrdenada{
+            display: flex;
+            flex-direciton: column;
+        }
+
+        .palabraOrdenada p {
+            padding: 4px;
+        }
+    </style>
 </body>
 </html>
